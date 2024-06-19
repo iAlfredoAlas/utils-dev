@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>utilsdev.biz</title>
+    <style>
+      html, body, .wrapper {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #222831;
+        color: #EEEEEE;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        padding: 1rem;
+        text-align: center;
+        background-color: #31363F;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+      }
+      h1 {
+        font-size: 5.5rem;
+        line-height: 1.1;
+        margin: 0;
+        color: #76ABAE;
+      }
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      p {
+        margin: 1rem 0;
+        color: #EEEEEE;
+      }
+      .progressbar {
+        display: block;
+        position: relative;
+        z-index: 9;
+        width: 100%;
+        max-width: 400px;
+        height: 30px;
+        margin: 1rem auto;
+      }
+      .progressbar::before,
+      .progressbar::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background-image: linear-gradient(90deg, #ffe800 0%, #ffe800 25%, #222 25%, #222 50%, #ffe800 50%, #ffe800 75%, #222 75%, #222 100%);
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        animation: movebar 5s linear infinite;
+      }
+      .progressbar::before {
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+      }
+      .progressbar::after {
+        z-index: 9;
+        top: 6px;
+        filter: blur(16px);
+        opacity: 0.7;
+      }
+      .stylization {
+        position: absolute;
+        z-index: 999;
+        height: 4px;
+        width: 90%;
+        left: 5%;
+        top: 6px;
+        opacity: 0.3;
+      }
+      .stylization::before,
+      .stylization::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 4px;
+        top: 0;
+        border-radius: 2px;
+      }
+      .stylization::before {
+        background: #fff;
+        left: 0;
+        right: 10px;
+      }
+      .stylization::after {
+        width: 6px;
+        background: #fff;
+        right: 0;
+      }
+      @-webkit-keyframes movebar {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 400px 0;
+        }
+      }
+      @keyframes movebar {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 400px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <h1>utilsdev.biz</h1>
+        <div class="progressbar">
+          <div class="stylization"></div>
+        </div>
+        <p>Our website is under construction.</p>
+      </main>
+    </div>
+  </body>
+</html>
